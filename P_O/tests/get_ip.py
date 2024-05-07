@@ -10,3 +10,5 @@ def get_router_ip():
 
 router_ip = get_router_ip()
 print("Router IP address: ", router_ip)
+
+
