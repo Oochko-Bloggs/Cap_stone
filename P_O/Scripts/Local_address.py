@@ -18,10 +18,9 @@ def info():
 
     connection_info = result.stdout.decode().splitlines()
     connection_info.remove(router_ip)
-    
     for index,addr in enumerate(connection_info):
         print(f'{index}\t......{addr}')
-    return connection_info
+    return connection_info, table
 
 
 if __name__ == '__main__':

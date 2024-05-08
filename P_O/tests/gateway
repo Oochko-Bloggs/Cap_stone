@@ -1,0 +1,8 @@
+import netifaces
+
+def get_default_gateway():
+    gateways = netifaces.gateways()
+    default_gateway = gateways['default'][netifaces.AF_INET][0]
+    return default_gateway
+
+print("Default Gateway IP:", get_default_gateway())
