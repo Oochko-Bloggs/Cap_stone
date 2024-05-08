@@ -17,8 +17,8 @@ This project purpose is \:
 - [ ] Password hash craker
 - [ ] File encryptor
 - [ ] ARM MITM attack script
-- [ ] DOS script 
-- [ ] Syn flood attack script
+- [X] DOS script 
+- [X] Syn flood attack script
 
 ### Recommendations
 Before running scripts run this command \: 
