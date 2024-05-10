@@ -67,6 +67,12 @@ pip3 install -r requirement.txt
 ```
 When executing code use root user privilege to avoid any permission error\!
 
+Check bash script has execute privilege (/P_O/Script/*.sh)
+if it is not give execute permission through : 
+```
+chmod +x *.sh
+```
+
 ### When running ARP MITM attack script 
 you have to enable ip\_forward or use Dual\-Interface setup to one for the attack and another for internet access 
 
