@@ -18,7 +18,7 @@ This project purpose is \:
 - [x] File encryptor
 - [x] ARM MITM attack script
 - [x] DOS script 
-- [x] <span style="color: green;">Syn flood attack script</span>
+- [x] Syn flood attack script
 
 ### Preparations
 ### Linux \(Debian\/Ubuntu\)\:
