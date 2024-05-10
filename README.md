@@ -11,11 +11,11 @@ This project purpose is \:
 
 ### Script and Tools
 - [ ] SSH login brute force
-- [ ] ftp login brute force
-- [ ] Subdomain enumerator 
-- [ ] Port Scanner
+- [x] ftp login brute force
+- [x] Subdomain enumerator 
+- [x] Port Scanner
 - [ ] Password hash craker
-- [ ] File encryptor
+- [x] File encryptor
 - [x] ARM MITM attack script
 - [x] DOS script 
 - [x] Syn flood attack script
