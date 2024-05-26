@@ -155,6 +155,7 @@ except KeyboardInterrupt:
     print("\nGOOD BYE!....")
 
 def main():
+    while True:
         print("\n1. SYN flood attack\n2. ARP MITM\n3. HTTP flood\n4. Print IP address list again\n\n")
         user_input = int(input("Choose attack script : "))
         match user_input:
@@ -165,8 +166,7 @@ def main():
         pass
 
 if __name__ == '__main__':
-    while True:
-        global already_connected
-        print("This script is educational purpose only!\n\n")
-        ip_list, table = info()
-        main()
+    global already_connected
+    print("This script is educational purpose only!\n\n")
+    ip_list, table = info()
+    main()
